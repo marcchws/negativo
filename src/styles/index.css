@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+@import './components.css' layer(components);
+@import './screens.css' layer(components);
+
+/* Granite: Stone is the neutral, Forest (primary) means "you're in", Rose (secondary) means time and scarcity.
+   Rose never fills a button, so "hurry" never reads as "do this". Brick is only for failures, with an icon and a word. */
+@theme {
+  --font-sans: 'Hanken Grotesk Variable', 'Hanken Grotesk', system-ui, sans-serif;
+
+  --color-stone-50: #f7f4ef;
+  --color-stone-100: #efeae2;
+  --color-stone-200: #e2dbd0;
+  --color-stone-300: #cbc2b4;
+  /* 3.4:1 on Stone 50: lines, past days and full bars only, never text. */
+  --color-stone-500: #8c8478;
+  --color-stone-600: #6b655d;
+  --color-stone-900: #1e1c1a;
+  --color-forest-50: #e8f2ed;
+  --color-forest-100: #cfe5db;
+  --color-forest-300: #7db89f;
+  --color-forest-600: #14664f;
+  --color-forest-700: #0f4f3d;
+  --color-forest-900: #0c2d24;
+  --color-rose-50: #fcefe8;
+  --color-rose-100: #f6dacb;
+  --color-rose-300: #e8a487;
+  --color-rose-500: #d9774f;
+  --color-rose-600: #a84b30;
+  --color-rose-800: #7a3420;
+  --color-brick-50: #fbe9e7;
+  --color-brick-200: #f0c4c0;
+  --color-brick-600: #a3262a;
+
+  --color-bg: var(--color-stone-50);
+  --color-surface: #ffffff;
+  --color-soft: var(--color-stone-100);
+  --color-line: var(--color-stone-200);
+  --color-line-strong: var(--color-stone-300);
+  --color-ink: var(--color-stone-900);
+  --color-muted: var(--color-stone-600);
+  --color-faint: var(--color-stone-500);
+  --color-primary: var(--color-forest-600);
+  --color-primary-hover: var(--color-forest-700);
+  --color-primary-soft: var(--color-forest-50);
+  --color-primary-text: var(--color-forest-700);
+  --color-secondary: var(--color-rose-500);
+  --color-secondary-soft: var(--color-rose-50);
+  --color-secondary-text: var(--color-rose-600);
+  --color-secondary-strong: var(--color-rose-800);
+  --color-night: var(--color-forest-900);
+  /* Muted text on Night (8.6:1). */
+  --color-night-muted: #b7c9c1;
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-card: 0 1px 2px rgb(30 28 26 / 0.06), 0 1px 1px rgb(30 28 26 / 0.04);
+  --shadow-lift: 0 1px 2px rgb(30 28 26 / 0.06), 0 8px 24px rgb(30 28 26 / 0.08);
+}
+
+@layer base {
+  * { margin: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font: 15px/1.45 var(--font-sans);
+    font-feature-settings: 'tnum' 1, 'lnum' 1;
+    -webkit-font-smoothing: antialiased;
+  }
+  button, input { font: inherit; color: inherit; }
+  button { cursor: pointer; background: none; border: 0; padding: 0; text-align: inherit; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; border-radius: 6px; }
+  ul, ol { padding: 0; }
+}
